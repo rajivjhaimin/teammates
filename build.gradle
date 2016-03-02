@@ -106,13 +106,15 @@ appengineRun {
 test {
     jvmArgs "-Duser.timezone=UTC-Xss2m"
     ignoreFailures = numOfTestRetries != 0? true: false
+    println "${ignoreFailures}"
     useTestNG() {
         suites "src/test/testng.xml"
         useDefaultListeners = true
         outputDirectory = file("build/reports/test-try-1")
     }
     testLogging {
-        events "passed", "skipped", "failed"
+        events "skipped", "failed"
+        exceptionFormat = "full"
     }
 }
 test.dependsOn "appengineEnhance"
@@ -140,7 +142,8 @@ appengineTest.dependsOn "test"
             useDefaultListeners = true
         }
         testLogging {
-            events "passed", "skipped", "failed"
+            events "skipped", "failed"
+            exceptionFormat = "full"
         }
     }
     appengineTest.dependsOn "testRetry${id}"
