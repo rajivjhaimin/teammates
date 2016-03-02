@@ -118,7 +118,7 @@ test {
     }
 }
 test.dependsOn "appengineEnhance"
-// test.finalizedBy(killFF1)
+test.finalizedBy(killFF1)
 
 task appengineTest
 appengineTest.dependsOn "test"
@@ -145,7 +145,7 @@ appengineTest.dependsOn "test"
             exceptionFormat = "full"
         }
     }
-    // appengineTest.dependsOn "testRetry${id}"
+    appengineTest.dependsOn "testRetry${id}"
 }
 
 defaultTasks "appengineRun", "appengineTest", "appengineStop"
