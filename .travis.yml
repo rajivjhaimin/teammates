@@ -23,4 +23,4 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 install: true
-script: ./gradlew
+script: travis_wait 40 ./gradlew
