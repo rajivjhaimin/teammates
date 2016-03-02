@@ -113,7 +113,6 @@ test {
     maxHeapSize = "512m"
     ignoreFailures = numOfTestRetries != 0 ? true : false
     testLogging {
-        events "skipped", "failed"
         exceptionFormat = "full"
     }
 }
@@ -139,6 +138,7 @@ appengineTest.dependsOn "test"
         classpath = sourceSets.test.runtimeClasspath
         testSrcDirs = sourceSets.test.java.srcDirs as List
         jvmArgs "-Duser.timezone=UTC-Xss2m"
+        maxHeapSize = "512m"
         ignoreFailures = isLastRetry ? false : true
         finalizedBy = isLastRetry ? ["killFF${id+1}", "appengineStop"] : ["killFF${id+1}"]
         testLogging {
