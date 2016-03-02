@@ -110,8 +110,9 @@ test {
         outputDirectory = file("build/reports/test-try-1")
     }
     jvmArgs "-Duser.timezone=UTC-Xss2m"
-    ignoreFailures = numOfTestRetries != 0? true: false
+    ignoreFailures = numOfTestRetries != 0 ? true : false
     testLogging {
+        events "passed", "skipped", "failed"
         exceptionFormat = "full"
     }
 }
@@ -143,7 +144,7 @@ appengineTest.dependsOn "test"
             exceptionFormat = "full"
         }
     }
-    appengineTest.dependsOn "testRetry${id}"
+    // appengineTest.dependsOn "testRetry${id}"
 }
 
 defaultTasks "appengineRun", "appengineTest", "appengineStop"
