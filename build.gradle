@@ -110,6 +110,7 @@ test {
         outputDirectory = file("build/reports/test-try-1")
     }
     jvmArgs "-Duser.timezone=UTC-Xss2m"
+    maxHeapSize = "512m"
     ignoreFailures = numOfTestRetries != 0 ? true : false
     testLogging {
         events "skipped", "failed"
