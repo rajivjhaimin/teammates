@@ -8,8 +8,6 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
     - $TRAVIS_BUILD_DIR/libs
-git:
-  depth: 10
 
 before_install:
   - cp src/main/resources/build.template.properties src/main/resources/build.properties
@@ -21,4 +19,5 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
 
+install: true
 script: ./gradlew
