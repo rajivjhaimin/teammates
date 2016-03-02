@@ -112,7 +112,7 @@ test {
     jvmArgs "-Duser.timezone=UTC-Xss2m"
     ignoreFailures = numOfTestRetries != 0 ? true : false
     testLogging {
-        events "passed", "skipped", "failed"
+        events "skipped", "failed"
         exceptionFormat = "full"
     }
 }
