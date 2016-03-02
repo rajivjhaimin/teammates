@@ -1,0 +1,19 @@
+language: java
+
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $TRAVIS_BUILD_DIR/libs
+git:
+  depth: 10
+
+before_install:
+  - cp src/main/resources/build.template.properties src/main/resources/build.properties
+  - cp src/test/resources/test.template.properties src/test/resources/test.properties
+  - cp src/main/webapp/WEB-INF/appengine-web.template.xml src/main/webapp/WEB-INF/appengine-web.xml
+
+script: ./gradlew
