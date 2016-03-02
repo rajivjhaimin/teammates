@@ -11,8 +11,8 @@
             <package name="teammates.test.cases.common" />
             <package name="teammates.test.cases.logic" />
             <package name="teammates.test.cases.storage" />
-            <package name="teammates.test.cases.ui" />
-            <package name="teammates.test.cases.ui.pagedata" />
+            <!-- <package name="teammates.test.cases.ui" />
+            <package name="teammates.test.cases.ui.pagedata" /> -->
         </packages>
         <classes>
             <class name="teammates.test.cases.testdriver.AssertHelperTest" />
