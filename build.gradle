@@ -2,7 +2,7 @@ apply plugin: "war"
 apply plugin: "appengine"
 
 def appengineVersion = "1.9.27"
-def numOfTestRetries = 3
+def numOfTestRetries = 2
 
 buildscript {
     repositories {
@@ -103,6 +103,14 @@ appengineRun {
     }
 }
 
+(1..numOfTestRetries + 1).each { id ->
+    task "appengineStop${id}"(type: com.google.appengine.task.StopTask)
+    task "appengineRun${id}"(type: com.google.appengine.task.RunTask) {
+        daemon = true
+        dependsOn "appengineStop${id}"
+    }
+}
+
 test {
     useTestNG() {
         suites "src/test/testng.xml"
@@ -112,12 +120,9 @@ test {
     jvmArgs "-Duser.timezone=UTC-Xss2m"
     maxHeapSize = "512m"
     ignoreFailures = numOfTestRetries != 0 ? true : false
-    testLogging {
-        exceptionFormat = "full"
-    }
+    finalizedBy = ["killFF1", "appengineStop1", "appengineRun1"]
 }
 test.dependsOn "appengineEnhance"
-test.finalizedBy(killFF1)
 
 task appengineTest
 appengineTest.dependsOn "test"
@@ -140,10 +145,8 @@ appengineTest.dependsOn "test"
         jvmArgs "-Duser.timezone=UTC-Xss2m"
         maxHeapSize = "512m"
         ignoreFailures = isLastRetry ? false : true
-        finalizedBy = isLastRetry ? ["killFF${id+1}", "appengineStop"] : ["killFF${id+1}"]
-        testLogging {
-            exceptionFormat = "full"
-        }
+        finalizedBy = 
+        finalizedBy = isLastRetry ? ["killFF${id+1}", "appengineStop"] : ["killFF1", "appengineStop${id+1}", "appengineRun${id+1}"]
     }
     appengineTest.dependsOn "testRetry${id}"
 }
