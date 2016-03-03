@@ -40,7 +40,7 @@
             <class name="teammates.test.cases.ui.browsertests.FeedbackMsqQuestionUiTest" />
             <class name="teammates.test.cases.ui.browsertests.FeedbackNumScaleQuestionUiTest" />
             <class name="teammates.test.cases.ui.browsertests.FeedbackRubricQuestionUiTest" />
-            <class name="teammates.test.cases.ui.browsertests.FeedbackRankQuestionUiTest" />
+            <class name="teammates.test.cases.ui.browsertests.FeedbackRankQuestionUiTest" /> -->
             <class name="teammates.test.cases.ui.browsertests.InstructorEditStudentFeedbackPageUiTest" />
             <class name="teammates.test.cases.ui.browsertests.InstructorFeedbackEditPageUiTest" />
             <class name="teammates.test.cases.ui.browsertests.InstructorFeedbackEditCopyUiTest" />
@@ -51,7 +51,7 @@
             <class name="teammates.test.cases.ui.browsertests.InstructorStudentListPageUiTest" />
             <class name="teammates.test.cases.ui.browsertests.InstructorStudentRecordsPageUiTest" />
             <class name="teammates.test.cases.ui.browsertests.InstructorSubmissionAdjustmentUiTest" />
-            <class name="teammates.test.cases.ui.browsertests.InstructorHomePageUiTest" /> -->
+            <class name="teammates.test.cases.ui.browsertests.InstructorHomePageUiTest" />
             <class name="teammates.test.cases.ui.browsertests.InstructorSearchPageUiTest" />
             <!-- <class name="teammates.test.cases.ui.browsertests.StudentCourseDetailsPageUiTest" />
             <class name="teammates.test.cases.ui.browsertests.StudentFeedbackSubmitPageUiTest" />
