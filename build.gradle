@@ -146,7 +146,7 @@ appengineTest.dependsOn "test"
         maxHeapSize = "512m"
         ignoreFailures = isLastRetry ? false : true
         finalizedBy = 
-        finalizedBy = isLastRetry ? ["killFF${id+1}", "appengineStop"] : ["killFF1", "appengineStop${id+1}", "appengineRun${id+1}"]
+        finalizedBy = isLastRetry ? ["killFF${id+1}", "appengineStop"] : ["killFF${id+1}", "appengineStop${id+1}", "appengineRun${id+1}"]
     }
     appengineTest.dependsOn "testRetry${id}"
 }
