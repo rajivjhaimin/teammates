@@ -2,20 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="all-tests-in-parallel" parallel="tests" thread-count="1">
 
-    <test name="occasional-tests" parallel="classes">
-     <!-- These need not to run often unless the modification relates to them
-    directly. But they should be run before pushing new code to the repo. -->
-        <listeners>
-            <listener class-name="teammates.test.util.PriorityInterceptor" />
-        </listeners>
-        <classes>
-            <class name="teammates.test.cases.ui.browsertests.SystemErrorEmailReportTest" />
-            <class name="teammates.test.cases.ui.browsertests.TableSortTest" />
-            <class name="teammates.test.cases.ui.browsertests.AllJsTests" />
-            <class name="teammates.test.cases.ui.browsertests.MashupPageUiTest" />
-        </classes>
-    </test>
-
     <test name="parallel-ui-tests" parallel="classes">
         <!-- These cover the important UI functionality. Can be run in parallel. -->
         <listeners>
@@ -40,13 +26,13 @@
             <class name="teammates.test.cases.ui.browsertests.FeedbackMsqQuestionUiTest" />
             <class name="teammates.test.cases.ui.browsertests.FeedbackNumScaleQuestionUiTest" />
             <class name="teammates.test.cases.ui.browsertests.FeedbackRubricQuestionUiTest" />
-            <class name="teammates.test.cases.ui.browsertests.FeedbackRankQuestionUiTest" /> -->
+            <class name="teammates.test.cases.ui.browsertests.FeedbackRankQuestionUiTest" />
             <class name="teammates.test.cases.ui.browsertests.InstructorEditStudentFeedbackPageUiTest" />
             <class name="teammates.test.cases.ui.browsertests.InstructorFeedbackEditPageUiTest" />
             <class name="teammates.test.cases.ui.browsertests.InstructorFeedbackEditCopyUiTest" />
             <class name="teammates.test.cases.ui.browsertests.InstructorFeedbackPageUiTest" />
             <class name="teammates.test.cases.ui.browsertests.InstructorFeedbackResultsPageUiTest" />
-            <class name="teammates.test.cases.ui.browsertests.InstructorFeedbackSubmitPageUiTest" /> 
+            <class name="teammates.test.cases.ui.browsertests.InstructorFeedbackSubmitPageUiTest" /> -->
             <class name="teammates.test.cases.ui.browsertests.InstructorFeedbackQuestionSubmitPageUiTest" />
             <class name="teammates.test.cases.ui.browsertests.InstructorStudentListPageUiTest" />
             <class name="teammates.test.cases.ui.browsertests.InstructorStudentRecordsPageUiTest" />
