@@ -2,7 +2,7 @@ apply plugin: "war"
 apply plugin: "appengine"
 
 def appengineVersion = "1.9.27"
-def numOfTestRetries = 2
+def numOfTestRetries = 3
 
 buildscript {
     repositories {
