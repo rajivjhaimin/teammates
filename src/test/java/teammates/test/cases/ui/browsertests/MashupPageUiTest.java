@@ -50,6 +50,7 @@ public class MashupPageUiTest extends BaseUiTestCase {
     public static void classTearDown() throws Exception {
         //We do not release the browser instance here because we want the tester
         //  to see the loaded page.
+        BrowserPool.release(browser);
     }
 
 }

@@ -120,6 +120,11 @@ test {
     jvmArgs "-Duser.timezone=UTC-Xss2m"
     maxHeapSize = "512m"
     ignoreFailures = numOfTestRetries != 0 ? true : false
+    reports.html.enabled = false
+    reports.junitXml.enabled = false
+    testLogging {
+        events "passed"
+    }
     finalizedBy = ["killFF1", "appengineStop1", "appengineRun1"]
 }
 test.dependsOn "appengineEnhance"
@@ -145,8 +150,12 @@ appengineTest.dependsOn "test"
         jvmArgs "-Duser.timezone=UTC-Xss2m"
         maxHeapSize = "512m"
         ignoreFailures = isLastRetry ? false : true
-        finalizedBy = 
+        reports.html.enabled = false
+        reports.junitXml.enabled = false
         finalizedBy = isLastRetry ? ["killFF${id+1}", "appengineStop"] : ["killFF${id+1}", "appengineStop${id+1}", "appengineRun${id+1}"]
+        testLogging {
+            events "passed"
+        }
     }
     appengineTest.dependsOn "testRetry${id}"
 }
