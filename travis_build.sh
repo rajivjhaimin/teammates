@@ -11,4 +11,5 @@ while kill -0 $! >/dev/null 2>&1; do
     minutes=$((minutes+1))
     sleep 60
 done
+wait $!
 
