@@ -124,7 +124,6 @@ test {
     reports.junitXml.enabled = false
     testLogging {
         events "passed"
-        exceptionFormat = "full"
     }
     finalizedBy = ["killFF1", "appengineStop1", "appengineRun1"]
 }
@@ -156,7 +155,6 @@ appengineTest.dependsOn "test"
         finalizedBy = isLastRetry ? ["killFF${id+1}", "appengineStop"] : ["killFF${id+1}", "appengineStop${id+1}", "appengineRun${id+1}"]
         testLogging {
             events "passed"
-            exceptionFormat = "full"
         }
     }
     appengineTest.dependsOn "testRetry${id}"
