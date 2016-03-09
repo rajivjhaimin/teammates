@@ -18,7 +18,7 @@
             <class name="teammates.test.cases.testdriver.AssertHelperTest" />
             <class name="teammates.test.cases.testdriver.DataBundleTest" />
             <class name="teammates.test.cases.testdriver.HtmlHelperTest" />
-            <class name="teammates.test.cases.testdriver.TestNgTest" />
+            <!-- <class name="teammates.test.cases.testdriver.TestNgTest" /> -->
             <class name="teammates.test.cases.testdriver.TestPropertiesTest" />
         </classes>
     </test>
@@ -42,11 +42,11 @@
             <listener class-name="teammates.test.util.PriorityInterceptor" />
         </listeners>
         <classes>
-            <class name="teammates.test.cases.ui.browsertests.InstructorCourseJoinConfirmationPageUiTest" />
+            <!-- <class name="teammates.test.cases.ui.browsertests.InstructorCourseJoinConfirmationPageUiTest" />
             <class name="teammates.test.cases.ui.browsertests.StudentCourseJoinConfirmationPageUiTest" />
-            <class name="teammates.test.cases.ui.browsertests.StudentHomePageUiTest" />
+            <class name="teammates.test.cases.ui.browsertests.StudentHomePageUiTest" /> -->
             <class name="teammates.test.cases.ui.browsertests.AdminHomePageUiTest" />
-            <class name="teammates.test.cases.ui.browsertests.AllAccessControlUiTests" />
+            <!-- <class name="teammates.test.cases.ui.browsertests.AllAccessControlUiTests" /> -->
         </classes>
     </test>
 
