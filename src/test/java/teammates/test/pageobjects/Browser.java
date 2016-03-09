@@ -2,6 +2,8 @@ package teammates.test.pageobjects;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Stack;
 
 import org.openqa.selenium.WebDriver;
@@ -95,13 +97,22 @@ public class Browser {
             return htmlUnitDriver;
 
         } else if (TestProperties.inst().BROWSER.equals("firefox")) {
-            System.out.println("Using Firefox.");
-            String firefoxPath = TestProperties.inst().FIREFOX_PATH;
-            if(!firefoxPath.isEmpty()){
-                System.out.println("Custom path: " + firefoxPath);
-                System.setProperty("webdriver.firefox.bin",firefoxPath);
+            String hub_url = String.format("%s:%s@localhost:4445",
+                                           System.getenv("SAUCE_USERNAME"),
+                                           System.getenv("SAUCE_ACCESS_KEY"));
+            try {
+                return new RemoteWebDriver(new URL(String.format("http://%s/wd/hub", hub_url)),
+                                           DesiredCapabilities.firefox());
+            } catch (MalformedURLException e) {
+                return null;
             }
-            return new FirefoxDriver();
+            // System.out.println("Using Firefox.");
+            // String firefoxPath = TestProperties.inst().FIREFOX_PATH;
+            // if(!firefoxPath.isEmpty()){
+            //     System.out.println("Custom path: " + firefoxPath);
+            //     System.setProperty("webdriver.firefox.bin",firefoxPath);
+            // }
+            // return new FirefoxDriver();
 
         } else if (TestProperties.inst().BROWSER.equals("chrome")) {
 
