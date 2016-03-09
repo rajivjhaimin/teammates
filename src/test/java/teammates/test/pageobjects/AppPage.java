@@ -58,6 +58,7 @@ import teammates.test.driver.TestProperties;
 public abstract class AppPage {
     protected static Logger log = Utils.getLogger();
     private static final By MAIN_CONTENT = By.id("mainContent");
+    private static final By BODY = By.tagName("body");
     
     static final long ONE_MINUTE_IN_MILLIS=60000;
     
@@ -373,6 +374,9 @@ public abstract class AppPage {
      * Click the 'logout' link in the top menu of the page.
      */
     public AppPage logout(){
+        System.out.println(browser.driver.findElement(BODY).getAttribute("innerHTML"));
+        System.out.println(logoutButton.isDisplayed());
+        waitForElementVisibility(logoutButton);
         logoutButton.click();
         return this;
     }
