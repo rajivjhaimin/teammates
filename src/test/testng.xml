@@ -22,4 +22,18 @@
             <class name="teammates.test.cases.testdriver.TestPropertiesTest" />
         </classes>
     </test>
+
+    <test name="occasional-tests" parallel="classes">
+     <!-- These need not to run often unless the modification relates to them
+    directly. But they should be run before pushing new code to the repo. -->
+        <listeners>
+            <listener class-name="teammates.test.util.PriorityInterceptor" />
+        </listeners>
+        <classes>
+            <class name="teammates.test.cases.ui.browsertests.SystemErrorEmailReportTest" />
+            <class name="teammates.test.cases.ui.browsertests.TableSortTest" />
+            <class name="teammates.test.cases.ui.browsertests.AllJsTests" />
+            <class name="teammates.test.cases.ui.browsertests.MashupPageUiTest" />
+        </classes>
+    </test>
 </suite> 
