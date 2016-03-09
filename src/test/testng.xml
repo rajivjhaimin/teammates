@@ -36,4 +36,15 @@
             <class name="teammates.test.cases.ui.browsertests.MashupPageUiTest" />
         </classes>
     </test>
+
+    <test name="rare-tests" parallel="classes">
+     <!-- These need not be run during staging. -->
+        <listeners>
+            <listener class-name="teammates.test.util.PriorityInterceptor" />
+        </listeners>
+        <classes>
+            <class name="teammates.test.cases.testdriver.BackDoorTest" />
+        </classes>
+    </test>
+
 </suite> 
