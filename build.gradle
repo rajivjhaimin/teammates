@@ -125,7 +125,6 @@ test {
     testLogging {
         events "passed"
         exceptionFormat = "full"
-        showStandardStreams = true
     }
     finalizedBy = ["killFF1", "appengineStop1", "appengineRun1"]
 }
@@ -158,7 +157,6 @@ appengineTest.dependsOn "test"
         testLogging {
             events "passed"
             exceptionFormat = "full"
-            showStandardStreams = true
         }
     }
     appengineTest.dependsOn "testRetry${id}"
