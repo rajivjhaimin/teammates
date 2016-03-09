@@ -374,9 +374,9 @@ public abstract class AppPage {
      * Click the 'logout' link in the top menu of the page.
      */
     public AppPage logout(){
-        System.out.println(browser.driver.findElement(BODY).getAttribute("innerHTML"));
-        System.out.println(logoutButton.isDisplayed());
-        waitForElementVisibility(logoutButton);
+        // System.out.println(browser.driver.findElement(BODY).getAttribute("innerHTML"));
+        // System.out.println(logoutButton.isDisplayed());
+        // waitForElementVisibility(logoutButton);
         logoutButton.click();
         return this;
     }
