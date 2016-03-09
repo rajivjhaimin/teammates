@@ -97,22 +97,26 @@ public class Browser {
             return htmlUnitDriver;
 
         } else if (TestProperties.inst().BROWSER.equals("firefox")) {
-            String hub_url = String.format("%s:%s@localhost:4445",
-                                           System.getenv("SAUCE_USERNAME"),
-                                           System.getenv("SAUCE_ACCESS_KEY"));
-            try {
-                return new RemoteWebDriver(new URL(String.format("http://%s/wd/hub", hub_url)),
-                                           DesiredCapabilities.firefox());
-            } catch (MalformedURLException e) {
-                return null;
-            }
-            // System.out.println("Using Firefox.");
-            // String firefoxPath = TestProperties.inst().FIREFOX_PATH;
-            // if(!firefoxPath.isEmpty()){
-            //     System.out.println("Custom path: " + firefoxPath);
-            //     System.setProperty("webdriver.firefox.bin",firefoxPath);
+            // String url = "http://ashrayjain:65868d03-87eb-4385-936a-1624d088fd15@ondemand.saucelabs.com:80/wd/hub";
+            // 
+            // DesiredCapabilities caps = DesiredCapabilities.firefox();
+            // caps.setCapability("platform", "Windows 10");
+            // caps.setCapability("version", "38.0.5");
+            // // String hub_url = String.format("%s:%s@localhost:4445",
+            // //                                ,
+            // //                                );
+            // try {
+            //     return new RemoteWebDriver(new URL(url), caps);
+            // } catch (MalformedURLException e) {
+            //     return null;
             // }
-            // return new FirefoxDriver();
+            System.out.println("Using Firefox.");
+            String firefoxPath = TestProperties.inst().FIREFOX_PATH;
+            if(!firefoxPath.isEmpty()){
+                System.out.println("Custom path: " + firefoxPath);
+                System.setProperty("webdriver.firefox.bin",firefoxPath);
+            }
+            return new FirefoxDriver();
 
         } else if (TestProperties.inst().BROWSER.equals("chrome")) {
 
