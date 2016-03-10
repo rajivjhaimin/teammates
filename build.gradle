@@ -101,7 +101,7 @@ appengineRun {
         ignoreExitValue = true
         outputs.upToDateWhen { false }
         onlyIf {
-            file("build/reports/test-try-${id-1}/testng-failed.xml").exists()
+            file("build/reports/test-try-${id}/testng-failed.xml").exists()
         }
     }
 }
@@ -109,21 +109,21 @@ appengineRun {
 (1..numOfTestRetries + 1).each { id ->
     task "appengineStop${id}"(type: com.google.appengine.task.StopTask) {
         onlyIf {
-            file("build/reports/test-try-${id-1}/testng-failed.xml").exists()
+            file("build/reports/test-try-${id}/testng-failed.xml").exists()
         }
     }
     task "appengineRun${id}"(type: com.google.appengine.task.RunTask) {
         daemon = true
         dependsOn "appengineStop${id}"
         onlyIf {
-            file("build/reports/test-try-${id-1}/testng-failed.xml").exists()
+            file("build/reports/test-try-${id}/testng-failed.xml").exists()
         }
     }
 }
 
 test {
     useTestNG() {
-        suites System.getenv("TEST_SUITE")
+        suites System.getenv("TEST_SUITE") != null ? System.getenv("TEST_SUITE") : "src/test/testng.xml"
         useDefaultListeners = true
         outputDirectory = file("build/reports/test-try-1")
     }

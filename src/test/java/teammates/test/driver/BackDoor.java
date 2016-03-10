@@ -8,6 +8,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.HttpURLConnection;
 import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -658,6 +659,7 @@ public class BackDoor {
         wr.write(paramString);
         wr.flush();
         wr.close();
+        ((HttpURLConnection) conn).disconnect();
     }
 
     private static URLConnection getConnectionToUrl(String urlString)
