@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="all-tests-in-parallel" parallel="tests" thread-count="1">
+<suite name="all-tests-in-parallel" parallel="tests" thread-count="2">
     <test name="component-tests">
         <listeners>
             <listener class-name="teammates.test.util.PriorityInterceptor" />
@@ -18,7 +18,7 @@
             <class name="teammates.test.cases.testdriver.AssertHelperTest" />
             <class name="teammates.test.cases.testdriver.DataBundleTest" />
             <class name="teammates.test.cases.testdriver.HtmlHelperTest" />
-            <class name="teammates.test.cases.testdriver.TestNgTest" />
+            <!-- <class name="teammates.test.cases.testdriver.TestNgTest" /> -->
             <class name="teammates.test.cases.testdriver.TestPropertiesTest" />
         </classes>
     </test>
