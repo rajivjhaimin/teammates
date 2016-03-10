@@ -9,7 +9,7 @@ while kill -0 $! >/dev/null 2>&1; do
         break;
     fi
     minutes=$((minutes+1))
-    # netstat -a | grep 8888
+    netstat -a | grep 8888
     sleep 60
 done
 wait $!

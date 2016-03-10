@@ -100,14 +100,24 @@ appengineRun {
         commandLine "pkill", "firefox"
         ignoreExitValue = true
         outputs.upToDateWhen { false }
+        onlyIf {
+            file("build/reports/test-try-${id-1}/testng-failed.xml").exists()
+        }
     }
 }
 
 (1..numOfTestRetries + 1).each { id ->
-    task "appengineStop${id}"(type: com.google.appengine.task.StopTask)
+    task "appengineStop${id}"(type: com.google.appengine.task.StopTask) {
+        onlyIf {
+            file("build/reports/test-try-${id-1}/testng-failed.xml").exists()
+        }
+    }
     task "appengineRun${id}"(type: com.google.appengine.task.RunTask) {
         daemon = true
         dependsOn "appengineStop${id}"
+        onlyIf {
+            file("build/reports/test-try-${id-1}/testng-failed.xml").exists()
+        }
     }
 }
 
