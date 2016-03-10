@@ -667,6 +667,7 @@ public class BackDoor {
         URL url = new URL(urlString);
         URLConnection conn = url.openConnection();
         conn.setDoOutput(true);
+        conn.setConnectTimeout(30000);
         return conn;
     }
 
