@@ -18,9 +18,6 @@ cache:
 
 addons:
   firefox: "38.0.5"
-  apt:
-    packages:
-      - net-tools
 
 before_install:
   - cp src/main/resources/build.template.properties src/main/resources/build.properties
