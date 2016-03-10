@@ -113,7 +113,7 @@ appengineRun {
 
 test {
     useTestNG() {
-        suites "src/test/testng-travis-parallel.xml"
+        suites System.getenv("TEST_SUITE")
         useDefaultListeners = true
         outputDirectory = file("build/reports/test-try-1")
     }

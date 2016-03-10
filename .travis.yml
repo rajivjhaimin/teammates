@@ -6,6 +6,10 @@ notifications:
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 
+env:
+  - TEST_SUITE=src/test/testng-travis-parallel.xml
+  - TEST_SUITE=src/test/testng-travis-others.xml
+
 cache:
   directories:
     - $HOME/.gradle/caches/
