@@ -1,0 +1,20 @@
+
+aside{
+     font-size:14px;
+    line-height:1.2;  
+    width:200px;
+    padding-left:5px;
+    margin-top:5px;
+    border-right: 1px dashed #aaa;
+    border-bottom: 1px dashed #aaa;
+    border-top: 1px dashed #aaa;
+    border-radius:5px;
+    padding-top:10px;
+    position:fixed;
+    }
+
+#feature{
+font-size:18px !important;
+    line-height:1.4; 
+}
+	
