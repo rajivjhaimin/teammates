@@ -1,56 +1,78 @@
 <!DOCTYPE html>
-
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="application-name" content="TEAMMATES - Online Peer Feedback/Evaluation System for Student Team Projects">
-    <meta name="keywords" content="Teammates, peer feedback, peer evaluation, student, team, project, free, terms of use, conditions">
-    <meta name="description" content="TEAMMATES is an Online Peer Feedback System for student team projects. It is completely free to use.
-    Get your students to evaluate their performance in team projects, and view reports and summaries of their feedback and evaluations.">
-    <link rel="stylesheet" href="stylesheets/teammates.css" type="text/css">
-    <title>TEAMMATES[Terms of Use] - Online Peer Feedback/Evaluation System for Student Team Projects<</title>
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta name="application-name" content="TEAMMATES - Online Peer Feedback/Evaluation System for Student Team Projects">
+   <meta name="keywords" content="Teammates, peer feedback, peer evaluation, student, team, project, free, features">
+   <meta name="description" content="TEAMMATES is an Online Peer Feedback System for student team projects. It is completely free to use.
+   Get your students to evaluate their performance in team projects, and view reports and summaries of their feedback and evaluations.">
+       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="stylesheets/teammates.css" type="text/css">   
+   <title>TEAMMATES[Features] - Online Feedback Management System for Education</title>
+   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <script type="text/javascript" src="/js/googleAnalytics.js"></script>
 </head>
 
 <body>
-    <div id="mainContainer">
-        <div id="header">
-            <div id="headerWrapper">
-                <div id="imageHolder">
-                    <a href="/index.html">
-                   <img alt="TEAMMATES[Logo] - Online Peer Feedback/Evaluation System for Student Team Projects" src="images/teammateslogo.jpg" width="150px" height ="47px">
+
+  <div id="mainContainer">
+   
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <!-- Logo -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+         <a href="/index.html"> <img
+                        alt="TEAMMATES[Logo] - Online Peer Feedback/Evaluation System for Student Team Projects"
+                        src="images/teammateslogo.jpg" width="150px" height="47px">
                     </a>
-                </div>
-                <div id="menuHolder">
-                    <div id="textHolder">
-                        <ul id="navbar">
-                            <li><a href="index.html">Home</a></li>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="collapse navbar-collapse" id="mainNavBar">
+            <ul class="nav navbar-nav navbar-right">
+							<li><a href="index.html">Home</a></li>
                             <li><a href="features.html">Features</a></li>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="contact.html">Contact</a></li>
-                            <li class="current"><strong>Terms of Use</strong></li>
-                        </ul>
-                    </div>
-                    <div id="loginHolder">
-                            <form action="/login" style="float:left" name="studentLogin">
-                             <input type="submit" name="student" class="button" id="btnStudentLogin" value="Student Login">
-                         </form>
-                         <form action="/login" name="instructorLogin" style="float:left">
-                             <input type="submit" name="instructor" class="button" id="btnInstructorLogin" value=" Instructor Login">
-                         </form>
-                    </div>
-                    <div style="clear: both;"></div>
-                </div>
-                <div style="clear: both;"></div>
-            </div>
+                            <li><a href="terms.html">Terms of Use</a></li>
+							<li>
+							<form id="loginHolder" action="/login" style="float: left;" name="studentLogin">
+                            <input type="submit" name="student" class="button" id="btnStudentLogin" value="Student Login">
+							</form>
+							</li>
+							<li>
+							
+                            
+							<form id="loginHolder" action="/login" name="instructorLogin" style="float: left;">
+								<input type="submit" name="instructor" class="button" id="btnInstructorLogin" value=" Instructor Login">
+							</form>
+								
+							</li>
+            </ul>
         </div>
+
+    </div>
+</nav>
         
-        <div id="mainContent">
+		<div class = "container">
+        <div class="row row-centered">
+		
+        <div id="mainContent" class = "col-xs-12 col-md-10 col-centered" >
             <h1 id="caption">
                 Terms of Use
             </h1>
-            <img src="images/terms.png" width="125px"  style="padding-left:100px">
-            <div id="contentHolder">
+            <img src="images/terms.png" width="250px" style="padding-left:100px">
+            <div id="contentHolder" >
+			
+			
                 <p>By using <span class="bold">TEAMMATES</span>, you agree to the following terms of use:</p>
                 <br>
                <p><span class="bold">Quality of service</span>: We take pride in our work and we shall do our best to provide good service to users. However, the  service is provided &quot;AS IS&quot; and WITHOUT ANY WARRANTY. You use 
@@ -67,17 +89,20 @@
           We do not use TEAMMATES data for research. Only TEAMMATES
           administrators (not developers) have access to data, for performance monitoring and
           troubleshooting purposes. <br> <br>
-      </div>        
-        </div>       
+      </div> 
+		</div>	 
+</div>	
+</div>	
     </div>
-    
-    <div id="footer">
+    <div class ="row">
+	<div class= "">
+    <div id="footer" >
         <div id="footerWrapper">
             <div id="footerRightCol">
                 Hosted on <a class="footer" href="http://code.google.com/appengine/" target="_blank">Google App Engine</a>
             </div>           
         </div>       
-    </div>   
-   
+    </div> </div>  
+  </div>
 </body>
 </html>

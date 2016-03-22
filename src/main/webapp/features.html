@@ -6,6 +6,9 @@
    <meta name="keywords" content="Teammates, peer feedback, peer evaluation, student, team, project, free, features">
    <meta name="description" content="TEAMMATES is an Online Peer Feedback System for student team projects. It is completely free to use.
    Get your students to evaluate their performance in team projects, and view reports and summaries of their feedback and evaluations.">
+       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
    <link rel="stylesheet" href="stylesheets/teammates.css" type="text/css">   
    <title>TEAMMATES[Features] - Online Feedback Management System for Education</title>
    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -15,41 +18,55 @@
 <body>
 
   <div id="mainContainer">
-    <div id="header">
-      <div id="headerWrapper">
-        <div id="imageHolder">
-          <a href="/index.html"> <img
-            alt="TEAMMATES[Logo] - Online Feedback Management System for Education"
-            src="images/teammateslogo.jpg" width="150px" height="47px">
-          </a>
-        </div>
-        <div id="menuHolder">
-          <div id="textHolder">
-            <ul id="navbar">
-              <li><a href="index.html">Home</a></li>
-              <li class="current"><strong>Features</strong></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="terms.html">Terms of Use</a></li>
-            </ul>
-          </div>
-          <div id="loginHolder">
-            <form action="/login" style="float: left" name="studentLogin">
-              <input type="submit" name="student" class="button" id="btnStudentLogin"
-                value="Student Login">
-            </form>
-            <form action="/login" name="instructorLogin" style="float: left">
-              <input type="submit" name="instructor" class="button" id="btnInstructorLogin"
-                value=" Instructor Login">
-            </form>
-          </div>
-          <div style="clear: both;"></div>
-        </div>
-        <div style="clear: both;"></div>
-      </div>
-    </div>
+   
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
 
-    <div id="mainContent">
+        <!-- Logo -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+         <a href="/index.html"> <img
+                        alt="TEAMMATES[Logo] - Online Peer Feedback/Evaluation System for Student Team Projects"
+                        src="images/teammateslogo.jpg" width="150px" height="47px">
+                    </a>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="collapse navbar-collapse" id="mainNavBar">
+            <ul class="nav navbar-nav navbar-right">
+							<li><a href="index.html">Home</a></li>
+                            <li><a href="features.html">Features</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="terms.html">Terms of Use</a></li>
+							<li>
+							<form id="loginHolder" action="/login" style="float: left;" name="studentLogin">
+                            <input type="submit" name="student" class="button" id="btnStudentLogin" value="Student Login">
+							</form>
+							</li>
+							<li>
+							
+                            
+							<form id="loginHolder" action="/login" name="instructorLogin" style="float: left;">
+								<input type="submit" name="instructor" class="button" id="btnInstructorLogin" value=" Instructor Login">
+							</form>
+								
+							</li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+		<div class = "container">
+        <div class="row row-centered">
+		
+        <div id="mainContent" class = "col-xs-12 col-md-10 col-centered" >
+
 
       <div id="contentHolder">
 
@@ -60,7 +77,7 @@
         
         <div class="feature-details">
           <h2 id="caption">Team peer evaluations</h2>
-          <img src="images/feature-teampeerevaluations.png" width="500px"
+          <img src="images/feature-teampeerevaluations.png" width="100%"
             alt="Team peer evauluations">
           <p>
           <div class="feature-description">
@@ -69,11 +86,11 @@
             <p> Students can provide confidential peer evaluations to you too.
           </div>
         </div>
-        <img src="images/raised-edge.png" width="600px">
+        <img src="images/raised-edge.png" width="100%">
 
         <div class="feature-details">
           <h2 id="caption">Flexible feedback paths</h2>
-          <img src="images/feature-flexiblefeedbackpaths.png" width="500px"
+          <img src="images/feature-flexiblefeedbackpaths.png" width="100%"
             alt="Flexible feedback paths">
           <div class="feature-description">There are many other feedback paths available.<br>
           Some examples: <br>
@@ -81,12 +98,12 @@
             b) from instructors to students<br>
             c) from each student to three other students</div>
         </div>
-        <img src="images/raised-edge.png" width="600px">
+        <img src="images/raised-edge.png" width="100%">
 
 
         <div class="feature-details">
           <h2 id="caption">Powerful visibility control</h2>
-          <img src="images/feature-powerfullvisibilitycontrol.png" width="500px"
+          <img src="images/feature-powerfullvisibilitycontrol.png" width="100%"
             alt="Powerful visibility control">
           <div class="feature-description">If you plan to publish the responses collected, you
             can set the visibility level for each question i.e. who can see the<br>
@@ -94,35 +111,35 @@
             (ii) the identity of the feedback giver, and<br>
             (iii) the identity of the feedback receiver.</div>
         </div>
-        <img src="images/raised-edge.png" width="600px">
+        <img src="images/raised-edge.png" width="100%">
 
 
         <div class="feature-details">
           <h2 id="caption">Reports and statistics</h2>
-          <img src="images/feature-reportsandstatistics.png" width="500px"
+          <img src="images/feature-reportsandstatistics.png" width="100%"
             alt="Reports and statistics">
           <div class="feature-description">There are many report formats for viewing
             responses collected. <br> E.g. Group by team, then by feedback giver.<p>
             Some statistics for the responses are available too.</div>
         </div>
-        <img src="images/raised-edge.png" width="600px">
+        <img src="images/raised-edge.png" width="100%">
 
 
         <div class="feature-details">
           <h2 id="caption">Fine-grain access control</h2>
-          <img src="images/feature-finegrainaccesscontrol.png" width="500px"
+          <img src="images/feature-finegrainaccesscontrol.png" width="100%"
             alt="Fine-grain access control">
           <div class="feature-description">You can add more instructors (e.g. co-lecturers,
             visitors, tutors, etc.) to your courses and give them different access levels.<p>
             If required, you can even set which sessions of which section of students are accessible to
             a particular instructor.</div>
         </div>
-        <img src="images/raised-edge.png" width="600px">
+        <img src="images/raised-edge.png" width="100%">
 
 
         <div class="feature-details">
           <h2 id="caption">Different question types</h2>
-          <img src="images/feature-differentquestiontypes.png" width="500px"
+          <img src="images/feature-differentquestiontypes.png" width="100%"
             alt="Different question types">
           <div class="feature-description">Essay questions, MCQ questions, Multiple select
             questions, Numeric scale questions, ‘Distribute a fixed number of points among options’
@@ -131,23 +148,23 @@
             You can even generate MCQ options from
             student names, as illustrated in the above example.</div>
         </div>
-        <img src="images/raised-edge.png" width="600px">
+        <img src="images/raised-edge.png" width="100%">
 
 
         <div class="feature-details">
           <h2 id="caption">Reuse past questions</h2>
-          <img src="images/feature-reusepastquestions.png" width="500px" alt="Reuse past questions">
+          <img src="images/feature-reusepastquestions.png" width="100%" alt="Reuse past questions">
           <div class="feature-description">Once you have a perfect set of questions configured
             for a session, you can reuse those questions later, without needing to configure the same
             questions from scratch again.<p>
             TEAMMATES also provides some session templates to choose from.</div>
         </div>
-        <img src="images/raised-edge.png" width="600px">
+        <img src="images/raised-edge.png" width="100%">
 
 
         <div class="feature-details">
           <h2 id="caption">No signup required for students</h2>
-          <img src="images/feature-nosignuprequired.png" width="500px"
+          <img src="images/feature-nosignuprequired.png" width="100%"
             alt="No signup required for students">
           <div class="feature-description">
             Students can submit responses and view published responses using the unique links
@@ -157,36 +174,36 @@
               up profiles.
           </div>
         </div>
-        <img src="images/raised-edge.png" width="600px">
+        <img src="images/raised-edge.png" width="100%">
 
 
         <div class="feature-details">
           <h2 id="caption">Downloadable data</h2>
-          <img src="images/feature-downloadbledata.png" width="500px" alt="Downloadable data">
+          <img src="images/feature-downloadbledata.png" width="100%" alt="Downloadable data">
           <div class="feature-description">
             You can download the collected responses (and statistics) as spreadsheets.
             <p>The collected data belong to you and you may delete your data from TEAMMATES any
               time.
           </div>
         </div>
-        <img src="images/raised-edge.png" width="600px">
+        <img src="images/raised-edge.png" width="100%">
 
 
         <div class="feature-details">
           <h2 id="caption">Shareable comments</h2>
-          <img src="images/feature-sharablecomments.png" width="500px" alt="Sharable">
+          <img src="images/feature-sharablecomments.png" width="100%" alt="Sharable">
           <div class="feature-description">You can add comments about students, teams, or
             responses collected. You can even share these comments with students/instructors.
             <p>Fine-grained visibility control is available for comments too. For example, you can give
             a comment to a student that the receiving student can see while other students in the
             course can only see the comment text but cannot see the recipient name.</div>
         </div>
-        <img src="images/raised-edge.png" width="600px">
+        <img src="images/raised-edge.png" width="100%">
 
 
         <div class="feature-details">
           <h2 id="caption">Student profiles</h2>
-          <img src="images/feature-studentprofiles.png" width="500px" alt="Student profiles">
+          <img src="images/feature-studentprofiles.png" width="100%" alt="Student profiles">
           <div class="feature-description">
             You can get students to upload more information about themselves, including a profile
             picture. Such extra data can help you remember current/past students better.<span class="tiny-text"> [<a
@@ -198,36 +215,38 @@
               * All comments received by the student
           </div>
         </div>
-        <img src="images/raised-edge.png" width="600px">
+        <img src="images/raised-edge.png" width="100%">
 
 
         <div class="feature-details">
           <h2 id="caption">Powerful search</h2>
-          <img src="images/feature-powerfulsearch.png" width="500px" alt="Powerful search">
+          <img src="images/feature-powerfulsearch.png" width="100%" alt="Powerful search">
           <div class="feature-description">TEAMMATES has a powerful search feature to locate
             details about students or past comments.
             <p>Given above is an example of searching for a student whose name 
             you are not very sure of.
             </div>
         </div>
-        <img src="images/raised-edge.png" width="600px">
+        <img src="images/raised-edge.png" width="100%">
 
         <div class="feature-details">
           <h2 id="caption">Support for big courses</h2>
-          <img src="images/feature-supportforbigcourses.png" width="500px"
+          <img src="images/feature-supportforbigcourses.png" width="100%"
             alt="Support for big courses">
           <div class="feature-description">TEAMMATES can support a course of any size (even beyond 1,000
             students), as long as you divide the students into sections of no more than 100
             students. There is no limit on the number of courses or sessions you could have either.
           </div>
         </div>
-        <img src="images/raised-edge.png" width="600px"> 
+        <img src="images/raised-edge.png" width="100%"> 
         
         
         <br> <br> For more details about these features, visit the <a href="instructorHelp.html"
           target="_blank">Instructor Help</a> page or <a href="contact.html">email us</a>. <br> <br> <br>
       </div>
     </div>
+  </div>
+  </div>
   </div>
 
   <div id="footer">
